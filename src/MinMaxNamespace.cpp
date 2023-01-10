@@ -13,6 +13,8 @@ namespace tidy = clang::tidy;
 namespace tf = clang::transformer;
 namespace ast = clang::ast_matchers;
 
+namespace {
+
 auto MakeMinMaxNamespaceRule() {
   const auto isUnqualifiedDeclRefExpr =
       ast::declRefExpr(ast::unless(ast::has(ast::nestedNameSpecifierLoc())));
@@ -52,6 +54,8 @@ public:
     setRule(MakeMinMaxNamespaceRule());
   }
 };
+
+} // namespace
 
 class FoamModule : public tidy::ClangTidyModule {
 public:
