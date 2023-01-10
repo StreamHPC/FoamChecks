@@ -1,4 +1,4 @@
-project(ClangDelta LANGUAGES C CXX)
+project(FoamChecks LANGUAGES C CXX)
 cmake_minimum_required(VERSION 3.18)
 
 find_package(LLVM  REQUIRED)
